@@ -14,8 +14,8 @@ interface DB {
 
 export const db = new Kysely<DB>({
   dialect: new PlanetScaleDialect({
-    host: Deno.env.get("HOST"),
-    username: Deno.env.get("USERNAME"),
-    password: Deno.env.get("PASSWORD"),
+    host: import.meta.env.HOST,
+    username: import.meta.env.USERNAME,
+    password: import.meta.env.PASSWORD,
   }),
 })

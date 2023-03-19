@@ -3,6 +3,14 @@
     {
       "function": "entry",
       "path": "/"
+    },
+    {
+      "function": "entry",
+      "path": "/post.json"
+    },
+    {
+      "function": "entry",
+      "path": "/users"
     }
   ],
   "version": 1

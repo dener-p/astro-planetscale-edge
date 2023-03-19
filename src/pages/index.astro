@@ -1,7 +1,7 @@
 ---
-import { db } from "../db/schema"
+import { get } from "./post.json"
 
-const data = await db.selectFrom("Post").selectAll().execute()
+const data = await get().then((res) => res.json())
 ---
 
 <html lang="en">
@@ -17,7 +17,7 @@ const data = await db.selectFrom("Post").selectAll().execute()
     <p>Posts</p>
     <ul>
       {
-        data.map((post) => (
+        data.map((post: any) => (
           <>
             <li>User: {post.username}</li>
             <li>Post: {post.text}</li>
