@@ -3846,7 +3846,7 @@ var server_default = {
   renderToStaticMarkup
 };
 
-// .netlify/edge-functions/chunks/pages/all.5d6cbbbc.mjs
+// .netlify/edge-functions/chunks/pages/all.acb3f4ff.mjs
 function isUndefined(obj) {
   return obj === void 0;
 }
@@ -11580,9 +11580,9 @@ var _page1 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty
   __proto__: null,
   get
 }, Symbol.toStringTag, { value: "Module" }));
-var $$Astro$1 = createAstro();
+var $$Astro$2 = createAstro();
 var $$Index = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$Index;
   const data = await get().then((res) => res.json());
   return renderTemplate`<html lang="en">
@@ -11602,18 +11602,19 @@ var $$Index = createComponent(async ($$result, $$props, $$slots) => {
   </body>
 </html>`;
 }, "/home/dener/projetos/elysia/edge test/src/pages/index.astro");
-var $$file$1 = "/home/dener/projetos/elysia/edge test/src/pages/index.astro";
-var $$url$1 = "";
+var $$file$2 = "/home/dener/projetos/elysia/edge test/src/pages/index.astro";
+var $$url$2 = "";
 var _page0 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: $$Index,
-  file: $$file$1,
-  url: $$url$1
+  file: $$file$2,
+  url: $$url$2
 }, Symbol.toStringTag, { value: "Module" }));
-var $$Astro = createAstro();
+var $$Astro$1 = createAstro();
 var $$Users = createComponent(async ($$result, $$props, $$slots) => {
-  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Users;
+  const data = await db.selectFrom("Post").selectAll().execute();
   return renderTemplate`<html lang="en">
   <head>
     <meta charset="utf-8">
@@ -11625,13 +11626,42 @@ var $$Users = createComponent(async ($$result, $$props, $$slots) => {
   <body class="w-full h-full bg-slate-900 text-white">
     <h1>Astro</h1>
     <p>Posts</p>
-  </body></html>`;
+    <ul>
+      ${data.map((post) => renderTemplate`<li>${post.text}</li>`)}
+    </ul>
+  </body>
+</html>`;
 }, "/home/dener/projetos/elysia/edge test/src/pages/users.astro");
-var $$file = "/home/dener/projetos/elysia/edge test/src/pages/users.astro";
-var $$url = "/users";
+var $$file$1 = "/home/dener/projetos/elysia/edge test/src/pages/users.astro";
+var $$url$1 = "/users";
 var _page2 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
   __proto__: null,
   default: $$Users,
+  file: $$file$1,
+  url: $$url$1
+}, Symbol.toStringTag, { value: "Module" }));
+var $$Astro = createAstro();
+var $$Test = createComponent(async ($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  Astro2.self = $$Test;
+  return renderTemplate`<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <meta name="viewport" content="width=device-width">
+    <meta name="generator"${addAttribute(Astro2.generator, "content")}>
+    <title>Test astro edge</title>
+  ${renderHead($$result)}</head>
+  <body class="w-full h-full bg-slate-900 text-white">
+    <h1>Astro</h1>
+    <p>Posts</p>
+  </body></html>`;
+}, "/home/dener/projetos/elysia/edge test/src/pages/test.astro");
+var $$file = "/home/dener/projetos/elysia/edge test/src/pages/test.astro";
+var $$url = "/test";
+var _page3 = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.defineProperty({
+  __proto__: null,
+  default: $$Test,
   file: $$file,
   url: $$url
 }, Symbol.toStringTag, { value: "Module" }));
@@ -11667,9 +11697,9 @@ var adapter = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePropert
   __proto__: null,
   createExports
 }, Symbol.toStringTag, { value: "Module" }));
-var pageMap = /* @__PURE__ */ new Map([["src/pages/index.astro", _page0], ["src/pages/post.json.ts", _page1], ["src/pages/users.astro", _page2]]);
+var pageMap = /* @__PURE__ */ new Map([["src/pages/index.astro", _page0], ["src/pages/post.json.ts", _page1], ["src/pages/users.astro", _page2], ["src/pages/test.astro", _page3]]);
 var renderers = [Object.assign({ "name": "astro:jsx", "serverEntrypoint": "astro/jsx/server.js", "jsxImportSource": "astro" }, { ssr: server_default })];
-var _manifest2 = Object.assign(deserializeManifest({ "adapterName": "@astrojs/netlify/edge-functions", "routes": [{ "file": "", "links": ["_astro/index.cd760d9e.css"], "scripts": [], "routeData": { "route": "/", "type": "page", "pattern": "^\\/$", "segments": [], "params": [], "component": "src/pages/index.astro", "pathname": "/", "prerender": false, "_meta": { "trailingSlash": "ignore" } } }, { "file": "", "links": [], "scripts": [], "routeData": { "route": "/post.json", "type": "endpoint", "pattern": "^\\/post\\.json$", "segments": [[{ "content": "post.json", "dynamic": false, "spread": false }]], "params": [], "component": "src/pages/post.json.ts", "pathname": "/post.json", "prerender": false, "_meta": { "trailingSlash": "ignore" } } }, { "file": "", "links": ["_astro/index.cd760d9e.css"], "scripts": [], "routeData": { "route": "/users", "type": "page", "pattern": "^\\/users\\/?$", "segments": [[{ "content": "users", "dynamic": false, "spread": false }]], "params": [], "component": "src/pages/users.astro", "pathname": "/users", "prerender": false, "_meta": { "trailingSlash": "ignore" } } }], "base": "/", "markdown": { "drafts": false, "syntaxHighlight": "shiki", "shikiConfig": { "langs": [], "theme": "github-dark", "wrap": false }, "remarkPlugins": [], "rehypePlugins": [], "remarkRehype": {}, "gfm": true, "smartypants": true }, "pageMap": null, "propagation": [], "renderers": [], "entryModules": { "\0@astrojs-ssr-virtual-entry": "_@astrojs-ssr-virtual-entry.mjs", "astro:scripts/before-hydration.js": "" }, "assets": ["/_astro/index.cd760d9e.css", "/favicon.svg"] }), {
+var _manifest2 = Object.assign(deserializeManifest({ "adapterName": "@astrojs/netlify/edge-functions", "routes": [{ "file": "", "links": ["_astro/index.cd760d9e.css"], "scripts": [], "routeData": { "route": "/", "type": "page", "pattern": "^\\/$", "segments": [], "params": [], "component": "src/pages/index.astro", "pathname": "/", "prerender": false, "_meta": { "trailingSlash": "ignore" } } }, { "file": "", "links": [], "scripts": [], "routeData": { "route": "/post.json", "type": "endpoint", "pattern": "^\\/post\\.json$", "segments": [[{ "content": "post.json", "dynamic": false, "spread": false }]], "params": [], "component": "src/pages/post.json.ts", "pathname": "/post.json", "prerender": false, "_meta": { "trailingSlash": "ignore" } } }, { "file": "", "links": ["_astro/index.cd760d9e.css"], "scripts": [], "routeData": { "route": "/users", "type": "page", "pattern": "^\\/users\\/?$", "segments": [[{ "content": "users", "dynamic": false, "spread": false }]], "params": [], "component": "src/pages/users.astro", "pathname": "/users", "prerender": false, "_meta": { "trailingSlash": "ignore" } } }, { "file": "", "links": ["_astro/index.cd760d9e.css"], "scripts": [], "routeData": { "route": "/test", "type": "page", "pattern": "^\\/test\\/?$", "segments": [[{ "content": "test", "dynamic": false, "spread": false }]], "params": [], "component": "src/pages/test.astro", "pathname": "/test", "prerender": false, "_meta": { "trailingSlash": "ignore" } } }], "base": "/", "markdown": { "drafts": false, "syntaxHighlight": "shiki", "shikiConfig": { "langs": [], "theme": "github-dark", "wrap": false }, "remarkPlugins": [], "rehypePlugins": [], "remarkRehype": {}, "gfm": true, "smartypants": true }, "pageMap": null, "propagation": [], "renderers": [], "entryModules": { "\0@astrojs-ssr-virtual-entry": "_@astrojs-ssr-virtual-entry.mjs", "astro:scripts/before-hydration.js": "" }, "assets": ["/_astro/index.cd760d9e.css", "/favicon.svg"] }), {
   pageMap,
   renderers
 });

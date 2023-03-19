@@ -11,6 +11,10 @@
     {
       "function": "entry",
       "path": "/users"
+    },
+    {
+      "function": "entry",
+      "path": "/test"
     }
   ],
   "version": 1
