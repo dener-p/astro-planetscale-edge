@@ -1,0 +1,29 @@
+---
+import { get } from "./posts.json"
+
+const data = await get().then((res) => res.json())
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Test astro edge</title>
+  </head>
+  <body class="w-full h-full bg-slate-900 text-white">
+    <h1>Astro</h1>
+    <p>Posts</p>
+    <ul>
+      {
+        data.map((post: any) => (
+          <>
+            <li>User: {post.username}</li>
+            <li>Post: {post.text}</li>
+          </>
+        ))
+      }
+    </ul>
+  </body>
+</html>
