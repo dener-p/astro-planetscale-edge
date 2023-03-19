@@ -3846,7 +3846,7 @@ var server_default = {
   renderToStaticMarkup
 };
 
-// .netlify/edge-functions/chunks/pages/all.83bbd6ce.mjs
+// .netlify/edge-functions/chunks/pages/all.9eb77188.mjs
 function isUndefined(obj) {
   return obj === void 0;
 }
@@ -11563,9 +11563,9 @@ function formatDate(date) {
 }
 var db = new Kysely({
   dialect: new PlanetScaleDialect({
-    host: "aws.connect.psdb.cloud",
-    username: "vic1kr89ayfoy2pzwzdz",
-    password: "pscale_pw_LptvI3zyUFfWMWkCik6ciqYZAhSMDpX4GKHQASnknN8"
+    host: Deno.env.get("HOST"),
+    username: Deno.env.get("USERNAME"),
+    password: Deno.env.get("PASSWORD")
   })
 });
 var $$Astro = createAstro();
