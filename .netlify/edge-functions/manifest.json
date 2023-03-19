@@ -9,7 +9,7 @@
       "path": "/post.json"
     },
     {
-      "function": "entry",
+      "function": "enry",
       "path": "/users"
     },
     {
