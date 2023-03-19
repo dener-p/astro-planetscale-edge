@@ -1,7 +1,9 @@
 ---
-import { get } from "./post.json"
-
-const data = await get().then((res) => res.json())
+const envs = {
+  process: process.env.HOST,
+  astro: import.meta.env.HOST,
+  deno: Deno.env.get("HOST"),
+}
 ---
 
 <html lang="en">
@@ -17,12 +19,13 @@ const data = await get().then((res) => res.json())
     <p>Posts</p>
     <ul>
       {
-        data.map((post: any) => (
-          <>
-            <li>User: {post.username}</li>
-            <li>Post: {post.text}</li>
-          </>
-        ))
+        Object.entries(envs).map(([key, value]) => {
+          return (
+            <li>
+              {key}: {value}
+            </li>
+          )
+        })
       }
     </ul>
   </body>

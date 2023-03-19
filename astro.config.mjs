@@ -6,5 +6,5 @@ import netlify from '@astrojs/netlify/edge-functions';
 export default defineConfig({
   integrations: [tailwind()],
   output: 'server',
-  adapter: netlify()
+  adapter: netlify({})
 });
